@@ -10,3 +10,7 @@ app.get("/", (req, res) => {
   console.log("root");
   res.send("Hello world!");
 });
+
+app.listen(port, () => {
+  console.log("Server is listening!");
+});
