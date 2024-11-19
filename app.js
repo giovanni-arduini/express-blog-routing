@@ -36,8 +36,16 @@ app.put("/posts/:id", (req, res) => {
 });
 
 //modify
+app.patch("/posts/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(`Modifica il post con id ${id}`);
+});
 
 //destroy
+app.delete("/posts/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(`Elimina il post con id ${id}`);
+});
 
 app.listen(port, () => {
   console.log("Server is listening!");
