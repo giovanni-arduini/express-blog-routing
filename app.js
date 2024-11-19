@@ -17,7 +17,12 @@ app.get("/", (req, res) => {
 app.get("/posts", (req, res) => {
   res.send("Ecco la lista dei post");
 });
+
 //show
+app.get("/posts/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(`Ecco il post con id ${id}`);
+});
 
 //store
 
