@@ -30,6 +30,10 @@ app.post("/posts", (req, res) => {
 });
 
 //update
+app.put("/posts/:id", (req, res) => {
+  const id = req.params.id;
+  res.send(`Aggiorna il post con id ${id}`);
+});
 
 //modify
 
