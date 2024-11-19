@@ -14,9 +14,11 @@ router.get("/", (req, res) => {
 });
 
 //show
-router.get("/:id", (req, res) => {
-  const id = req.params.id;
-  res.send(`Ecco il post con id ${id}`);
+router.get("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  console.log(`Ecco il post con slug ${slug}`);
+  const post = posts.find((p) => p.slug === slug);
+  res.json(post);
 });
 
 //store
@@ -25,21 +27,21 @@ router.post("/", (req, res) => {
 });
 
 //update
-router.put("/:id", (req, res) => {
-  const id = req.params.id;
-  res.send(`Aggiorna il post con id ${id}`);
+router.put("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  res.send(`Aggiorna il post con slug ${slug}`);
 });
 
 //modify
-router.patch("/:id", (req, res) => {
-  const id = req.params.id;
-  res.send(`Modifica il post con id ${id}`);
+router.patch("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  res.send(`Modifica il post con slug ${slug}`);
 });
 
 //destroy
-router.delete("/:id", (req, res) => {
-  const id = req.params.id;
-  res.send(`Elimina il post con id ${id}`);
+router.delete("/:slug", (req, res) => {
+  const slug = req.params.slug;
+  res.send(`Elimina il post con slug ${slug}`);
 });
 
 module.exports = router;
