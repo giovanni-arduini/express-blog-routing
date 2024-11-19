@@ -1,5 +1,7 @@
 const express = require("express");
 const router = express.Router();
+const posts = require("../data/posts.js");
+
 // Non c'è più l'istanza dell'applicativo app, ma router!
 
 // Qui salvo tutte le rotte!
@@ -7,7 +9,8 @@ const router = express.Router();
 
 //index
 router.get("/", (req, res) => {
-  res.send("Ecco la lista dei post");
+  console.log("Ecco la lista dei post");
+  res.json(posts);
 });
 
 //show
