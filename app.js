@@ -25,6 +25,9 @@ app.get("/posts/:id", (req, res) => {
 });
 
 //store
+app.post("/posts", (req, res) => {
+  res.send("Crea un nuovo post!");
+});
 
 //update
 
